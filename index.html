@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandrashekhar Adhage | Software Engineer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6fb;
+      color: #0f172a;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .name {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .role {
+      color: #475569;
+      margin-bottom: 20px;
+    }
+    .bio {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #334155;
+      margin-bottom: 25px;
+    }
+    .info {
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .info div { margin-bottom: 10px; }
+
+    .socials a {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      font-weight: bold;
+    }
+
+    /* Main */
+    .main {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 25px;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 30px;
+    }
+    .tab {
+      padding-bottom: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #64748b;
+    }
+    .tab.active {
+      color: #2563eb;
+      border-bottom: 3px solid #2563eb;
+    }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+    .subtitle {
+      color: #475569;
+      margin-bottom: 25px;
+    }
+
+    /* Project Card */
+    .project {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 25px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      background: #e5e7eb;
+    }
+    .project h3 { margin-top: 0; }
+    .stats {
+      display: flex;
+      gap: 25px;
+      margin: 15px 0;
+      font-weight: 600;
+    }
+    .tags span {
+      display: inline-block;
+      background: #f1f5f9;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin: 4px 4px 0 0;
+    }
+    .actions {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-right: 10px;
+      display: inline-block;
+    }
+    .btn.primary { background: #0f172a; color: #fff; }
+    .btn.outline { border: 1px solid #0f172a; }
+
+    /* Resume */
+    .resume iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Profile" class="avatar" />
+      <div class="name">Chandrashekhar Adhage</div>
+      <div class="role">Senior Software Engineer</div>
+
+      <p class="bio">
+        Senior Software Engineer with 8+ years of experience in Java, Spring Boot,
+        system design, and scalable backend platforms.
+      </p>
+
+      <div class="info">
+        <div>📧 chandrashekhar@email.com</div>
+        <div>📞 +91-XXXXXXXXXX</div>
+        <div>📍 India</div>
+      </div>
+
+      <div class="socials">
+        <a href="https://linkedin.com" target="_blank">in</a>
+        <a href="https://github.com/cadhage" target="_blank">GH</a>
+        <a href="https://twitter.com" target="_blank">X</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="tabs">
+        <div class="tab active" onclick="openTab('projects')">Projects</div>
+        <div class="tab" onclick="openTab('experience')">Experience</div>
+        <div class="tab" onclick="openTab('resume')">Resume</div>
+        <div class="tab" onclick="openTab('achievements')">Achievements</div>
+      </div>
+
+      <!-- Projects -->
+      <section id="projects" class="section active">
+        <h2>My Projects</h2>
+        <p class="subtitle">A true engineer is measured by the products they build.</p>
+
+        <div class="project">
+          <img src="project.png" alt="Project" />
+          <div>
+            <h3>AI Powered Interview Simulator</h3>
+            <p>
+              AI-driven platform for mock interviews, coding practice and
+              personalized feedback using LLMs.
+            </p>
+            <div class="stats">
+              <div>500+ Views</div>
+              <div>Built: 2025</div>
+            </div>
+            <div class="tags">
+              <span>Java</span><span>Spring Boot</span><span>React</span><span>AI/ML</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="#">Open Project</a>
+              <a class="btn outline" href="#">View Code</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section">
+        <h2>Experience</h2>
+        <p><strong>Senior Software Engineer</strong> – Nomura Holdings</p>
+        <p>Building large-scale backend systems, APIs and regulatory platforms.</p>
+      </section>
+
+      <!-- Resume -->
+      <section id="resume" class="section resume">
+        <h2>Resume</h2>
+        <iframe src="resume.pdf"></iframe>
+      </section>
+
+      <!-- Achievements -->
+      <section id="achievements" class="section">
+        <h2>Achievements</h2>
+        <ul>
+          <li>Top 1% HackerRank</li>
+          <li>Top 5% LeetCode</li>
+          <li>AWS Certified Developer</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function openTab(id) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
