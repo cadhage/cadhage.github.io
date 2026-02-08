@@ -193,25 +193,35 @@ body {
 }
 
 /* ===== PDF VIEW ===== */
+/* ===== UPDATED PDF VIEW ===== */
 .pdf-wrapper {
   display: flex;
   justify-content: center;
-  padding: 18px 0;
+  padding: 10px 0;
+  background: #ffffff; /* Ensures the wrapper itself is white */
 }
 
 .pdf-frame {
-  width: 860px;
-  height: 1120px;
+  width: 100%;
+  max-width: 850px;
+  /* Standard A4 aspect ratio to prevent extra vertical black space */
+  aspect-ratio: 1 / 1.414; 
   background: #ffffff;
-  border-radius: 14px;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 16px 36px rgba(0,0,0,.18);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
 }
 
 .pdf-frame iframe {
   width: 100%;
   height: 100%;
   border: none;
+  display: block;
+  /* This filter targets the grey/black background of the browser's 
+     default PDF viewer and pushes it toward white */
+  filter: brightness(1.02) contrast(1.05); 
+  background-color: #ffffff;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -514,9 +524,7 @@ body {
   <p class="job-title">Lead Software Engineer</p>
 
   <p class="summary">
-    Software engineer with 10+ years of experience and a passion for AI and scalable systems—building products end-to-end, from idea to deployment. Ex-Barclays, IIT Bombay
-  </p>
-
+  Staff-level Software Engineer with 10+ years of experience designing and scaling cloud-native, distributed systems. Technical leader in Java, Spring Boot, AWS, and microservices, driving architecture, performance, and engineering excellence. Nomura | Ex-Barclays, IIT Bombay.  </p>
   <div class="info">
     <div>✉️ cadhage44@gmail.com</div>
     <div>📞 +91 9975015476</div>
